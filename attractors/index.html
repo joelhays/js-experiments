@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Strange Attractors</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.slate.min.css" >
+    <link href="css/style.css" rel="stylesheet">
+  </head>
+  <body>
+    <canvas id="myCanvas"> </canvas>
+    <article id="controls" class="overflow-auto">
+      Attractor: 
+      <br/>
+      <select id="attractorSelect"></select>
+
+      <hr/>
+
+      Parameters:
+      <br/>
+      <fieldset name="paramInput">
+        a:&nbsp; <small id="aValue"></small>
+        <input type="range" min="-5" max="50" value="-1.4" step="0.001" id="aSlider">
+      </fieldset>
+      <fieldset name="paramInput">
+        b:&nbsp; <small id="bValue"></small>
+        <input type="range" min="-5" max="50" value="1.6" step="0.001" id="bSlider">
+      </fieldset>
+      <fieldset name="paramInput">
+        c:&nbsp; <small id="cValue"></small>
+        <input type="range" min="-5" max="5" value="1.0" step="0.001" id="cSlider">
+      </fieldset>
+      <fieldset name="paramInput">
+        d:&nbsp; <small id="dValue"></small>
+        <input type="range" min="-5" max="5" value="0.7" step="0.001" id="dSlider">
+      </fieldset>
+      <fieldset>
+        <input type="button" id="randomizeButton" value="Randomize"/>
+      </fieldset>
+
+      <hr/>
+
+      <fieldset role="group">
+        <legend>Render:</legend>
+        <label><input type="radio" name="renderOption" id="showPointsOption"/>Points</label>
+        <label><input type="radio" name="renderOption" id="showTrailsOption"/>Trails</label>
+        <label><input type="radio" name="renderOption" id="showBothOption"/>Both</label>
+      </fieldset>
+    </article>
+
+    <script src="js/index.js" type="module"></script>
+
+
+<style>
+body {
+    background-color: #333;
+}
+</style>
+
+  </body>
+</html>

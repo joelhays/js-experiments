@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Conway's Game of Life</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.slate.min.css" >
+    <link href="css/style.css" rel="stylesheet">
+  </head>
+  <body>
+    <canvas id="gameOfLifeCanvas"></canvas>
+
+    <article id="controls" class="overflow-auto">
+      <b>Parameters</b>
+      <hr/>
+      <fieldset>
+        Cell Size:&nbsp; <small id="cellSizeValue"></small>
+        <input type="range" min="5" max="30" value="10" step="1" id="cellSizeSlider">
+      </fieldset>
+      <fieldset>
+        Speed:&nbsp; <small id="speedValue"></small>
+        <input type="range" min="0" max="1" value="0.5" step="0.1" id="speedSlider">
+      </fieldset>
+      <fieldset>
+        Color:
+        <input type="color" value="#00ee88" id="colorInput">
+      </fieldset>
+    </article>
+
+    <script src="js/index.js" type="module"></script>
+  </body>
+</html>
