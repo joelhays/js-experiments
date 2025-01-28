@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>L-Systems</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.slate.min.css" >
+    <link href="css/style.css" rel="stylesheet">
+  </head>
+  <body>
+    <canvas id="canvas"></canvas>
+    <article id="controls" class="overflow-auto">
+      <b>Parameters</b>
+      <hr/>
+
+      Preset: 
+      <br/>
+      <select id="presetSelect"></select>
+
+      <hr/>
+      
+      <fieldset>
+        Axiom:
+        <input type="text" value="F+F+F+F" id="axiomInput">
+      </fieldset>
+      <fieldset name="ruleInputs">
+        Rules:
+        <input type="text" value="F -> FF+F-F+F+FF" id="ruleInput">
+        <input type="text" value="F -> FF+F-F+F+FF" id="ruleInput2">
+      </fieldset>
+      <!-- <fieldset> -->
+      <!--   <input type="button" id="addRuleButton" value="Add Rule"/> -->
+      <!-- </fieldset> -->
+
+      <hr/>
+
+      <fieldset>
+        Generation:&nbsp; <small id="generationValue"></small>
+        <input type="number" min="0" max="10" value="0" step="1" id="generationSlider">
+      </fieldset>
+      <fieldset>
+        θ:&nbsp; <small id="angleValue" style="display:none"></small>
+        <input type="number" min="0" max="180" value="90" step="0.1" id="angleInput">
+        <input type="range" min="0" max="180" value="90" step="0.1" id="angleSlider">
+      </fieldset>
+      <fieldset id="lengthScaleControls">
+        Length Scale:&nbsp; <small id="lengthScaleValue"></small>
+        <input type="range" min="0.1" max="3" value="1.3" step="0.1" id="lengthScaleSlider">
+      </fieldset>
+
+      <hr/>
+
+      Alphabet:
+      <ul id="alphabet">
+        <li>F: Move and draw</li>
+        <li>f: Move without drawing</li>
+        <li>+: rotate θ</li>
+        <li>-: rotate -θ</li>
+        <li>|: rotate 180</li>
+        <li>[: save state</li>
+        <li>]: restore state</li>
+        <li>>: scale down line</li>
+        <li><: scale up line</li>
+      </ul>
+    </article>
+
+    <article id="generationText"></article>
+    <article id="stats"></article>
+
+
+    <!-- <fieldset id="timeline"> -->
+    <!--   <input type="range" min="0" max="100" value="0" step="1" id="timelineSlider"> -->
+    <!-- </fieldset> -->
+
+    <script src="js/index.js" type="module"></script>
+  </body>
+</html>
